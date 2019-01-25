@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/VolkRiot/GoogProtoBuffersNode#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bytebuffer": "^5.0.1",
     "express": "^4.13.4",
+    "long": "^4.0.0",
     "protobufjs": "^5.0.1"
   }
 }
