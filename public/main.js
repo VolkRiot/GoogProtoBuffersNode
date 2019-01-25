@@ -1,4 +1,9 @@
-const Axios = require('axios');
-const Long = require('long');
-const ByteBuffer = require('bytebuffer');
-const ProtoBuf = require('protobufjs');
+'use strict';
+let ProtoBuf = dcodeIO.ProtoBuf;
+let Message;
+
+ProtoBuf.loadProtoFile('message.proto', (err, builder) => {
+  Message = builder.build('Message');
+  console.log('Message is', new Message());
+  // loadMessage();
+});
