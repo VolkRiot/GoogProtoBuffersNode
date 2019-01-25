@@ -1,0 +1,23 @@
+{
+  "name": "googprotobuffersnode",
+  "version": "1.0.0",
+  "description": "Testing protocol buffers in Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VolkRiot/GoogProtoBuffersNode.git"
+  },
+  "author": "Misha Metrikin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VolkRiot/GoogProtoBuffersNode/issues"
+  },
+  "homepage": "https://github.com/VolkRiot/GoogProtoBuffersNode#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "protobufjs": "^5.0.1"
+  }
+}
