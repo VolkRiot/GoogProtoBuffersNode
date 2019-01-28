@@ -20,7 +20,13 @@ const Message = builder.build('Message');
 // Middleware to handle the Protobuff Array Buffer
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  if (!req.is('appication/octet-stream')) return next();
+  if (!req.is('application/octet-stream')) {
+    console.log(
+      'Request is not of type appication/octet-stream',
+      req.headers['content-type']
+    );
+    return next();
+  }
 
   let data = [];
 
@@ -49,17 +55,17 @@ app.get('/api/messages', (req, res, next) => {
 });
 
 app.post('/api/messages', (req, res, next) => {
-  if (req.row) {
+  if (req.raw) {
     try {
       // Decode the meessage.
-      let msg = Message.decode(req.row);
+      let msg = Message.decode(req.raw);
       console.log(`Recieved ${msg.text} in ${msg.lang}`);
     } catch (err) {
       console.log('Processing failed with: ', err);
       next(err);
     }
   } else {
-    console.log('Not binary Data');
+    console.log('Not binary Data in post');
   }
 });
 
