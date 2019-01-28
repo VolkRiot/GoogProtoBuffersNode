@@ -60,6 +60,7 @@ app.post('/api/messages', (req, res, next) => {
       // Decode the meessage.
       let msg = Message.decode(req.raw);
       console.log(`Recieved ${msg.text} in ${msg.lang}`);
+      res.send(msg.encode().toBuffer());
     } catch (err) {
       console.log('Processing failed with: ', err);
       next(err);
