@@ -1,4 +1,8 @@
+syntax = "proto3";
+
 message Message {
   required string text = 1;
   required string lang = 2;
+  repeated int32 ages = 3;
+  optional string nickName = 4;
 }
